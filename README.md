@@ -186,6 +186,8 @@ We want to add a form for our `urls`.
 
 ```
 
+### A Note About Forms
+
 Note here that in this form we have both an **action** and a **method**.
 
 | form attribute | role |
@@ -202,6 +204,31 @@ Remember there are some conventions for certain types of requests.
 | `POST /puppies` | A `POST` request is usually reserved for **creating something new** on a server. | 
 | `PUT /puppies/sparky?name=sparkles` | A `PUT` request is usually reserved for some kind of **update** on the server. Here we might be trying to update the **puppy** with name **sparky** to have the name **sparkles** |
 | `DELETE /puppies/sparky` | The **DELETE** type of request should remove something from the server. Here we are removing the puppy with name of **sparky**. |
+
+----
+
+If we submit the above we will be making a `POST /urls`, and we will also be sending form data in our request. 
+
+* First we need to make sure our application can handle the form data being submitted.
+
+	```
+	npm install --save body-parser
+	```
+* Then we need to add `body-parser` to our require statements.
+
+	```
+	var express = require("express");
+	var path = require("path"); 
+	var bodyParser = require("body-parser"); // <-- add this
+
+	var app = express();
+	app.use(bodyParser.urlencoded({extended: true}) // <-- add this
+
+	// a variable that represents "./views"
+	var views = path.join(process.cwd(), "views"); 
+
+
+	```
 
 ### Pitfalls
 
