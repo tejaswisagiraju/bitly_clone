@@ -195,7 +195,7 @@ app.get("/", function (req, res) {
 
 #### Hint 2: Adding a form
 
-**We want to add a form to take in users' `urls`. **
+**We want to add a form to take in users' `urls`.**
 
 ```html
 
@@ -263,7 +263,7 @@ If we submit the form from above, we will be making a `POST /urls` request, and 
 -----
 #### Hint 3: Saving URLS
 
-** We want to keep track of our redirect urls. **
+**We want to keep track of our redirect urls.**
 
 * In order to save a url, we need to add an array to store our `urls`.
 
