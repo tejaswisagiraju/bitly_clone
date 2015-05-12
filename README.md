@@ -230,6 +230,16 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 
 	```
 
+* Now we need to setup our `app.post` route
+
+	```javascript
+	app.post("/urls", function (req, res) {
+		var newUrl = req.body.newUrl;
+		res.send("Received " + newUrl);
+	});
+	```
+
+
 ### Pitfalls
 
 * Make sure you check that each submited url starts with either `https://` or `http://`.
