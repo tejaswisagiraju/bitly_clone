@@ -33,7 +33,7 @@
 * A **user** should receive back a response with the url they can use to be redirected to the their submited url, i.e. something of the form  `localhost:3000/urls/:id`.
 * A **user** should be able to to use the url they receive back from your server as a redirect url.
 
-![user story](user_story.gif)
+![user story](user_story.gif)     
 *User story: Program requirements written in terms of what a user should be able to do with the final product.*
 
 ## Deliverables
