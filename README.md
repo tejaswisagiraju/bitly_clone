@@ -105,7 +105,7 @@ Feeling stuck?  Each hint below should help you get one step closer to completin
 
 #### Hint 0: General hints   
 
-* Each time you change your server, stop it and restart it.
+* Each time you change your server, stop it (CTRL-C) and restart it (`node index.js`).
 * Make sure you check that each submited url starts with either `https://` or `http://`.
 
 
