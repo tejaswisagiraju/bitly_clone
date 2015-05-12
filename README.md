@@ -3,11 +3,13 @@
 
 ### Getting Started
 
-* Fork this repo
-* Clone it
-* Do you work
-* `git add . -A && git commit -m "solution"`
-* Then `git push origin master`
+* Fork this repo onto your GitHub account.
+* Clone the repo from your GitHub account onto your computer.
+* Do your work in your local repo.
+* `git add . -A` and `git commit -m "solution"`
+* `git push origin master` to update your repo on GitHub.
+* Submit a link to the `bitly_clone` reop on your GitHub account.
+
 
 ## Helpful Concepts
 
@@ -21,6 +23,7 @@
 * A **user** should be able to to use the url they receive back from your server as a redirect url.
 
 ![user story](user_story.gif)
+*User story: Program requirements written in terms of what a user should be able to do with the final product.*
 
 ## Notes
 
@@ -32,14 +35,14 @@ You'll need the following routes:
 * `POST /urls` to submit a url to shorten
 * `GET /urls/:id` to be redirected to a url
 
-* When your **Express** server receives a `url` from the client you should store push it into an array.
-* When your **Express** server responds it should use the `indexOf` the url in the `urls` array as the `id`, e.g. if I am submit the first url I should get back the following:
+* When your **Express** server receives a url from the client, you should push it into an array.
+* When your **Express** server responds, it should use the `indexOf` the url from the `urls` array as the `id`. For example, if I  submit the first url, I should get back the following:
 	
 	```
 	View your url at localhost:3000/urls/0
 	
 	```
-* When your user goes to the `/urls/:id` route you should look up the `:id` param in the `urls` array to find the associated url and then redirect to it.
+* When your user goes to the `/urls/:id` route, you should look up the `:id` param in the `urls` array to find the associated url and then redirect to it.
 
 ## More Directions
 
