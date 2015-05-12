@@ -97,11 +97,11 @@ Wondering how to get started? This section will guide you through creating and s
 
 ### HINTS
 
-Feeling stuck?  Each hint below should help you get one step closer to completing the lab. We'll start with a few simple ones:
+Feeling stuck?  Each hint below should help you get one step closer to completing the lab. Hint 0 has a few simple tips, and the other hints have more detailed instructions (with spoilers!).
 
 #### Hint 0: General hints   
 
-* Each time you change your server, stop it (CTRL-C) and restart it (`node index.js`).
+* If you use `nodemon index.js` to start your sever, changes will be automatically updated.  Otherwise, each time you change your server code, you'll have to stop the server (CTRL-C) and restart it (`node index.js`).
 * Make sure you check that each submited url starts with either `https://` or `http://`.
 * To read form data, try using the Node package `body-parser` [(docs here)](https://github.com/expressjs/body-parser). **After** you require `body-parser` in your code, set it up with the following line:
 	```
