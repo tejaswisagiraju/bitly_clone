@@ -41,6 +41,60 @@ You'll need the following routes:
 	```
 * When your user goes to the `/urls/:id` route you should look up the `:id` param in the `urls` array to find the associated url and then redirect to it.
 
+## More Directions
+
+### Getting Started
+
+* Make the required files and directories
+
+	```
+	touch index.js
+	mkdir views
+	touch views/home.html
+	npm init 
+	npm install --save express
+	```
+* We'll need the `views/home.html` file to send as our response later.
+* The `index.js` file holds all of our main application logic
+* Make sure to setup your application to require **Express**.
+	
+	```
+	var express = require("express");
+	var app = express();
+	```
+* Then add your first simple route.
+
+	```
+	app.get("/", function (req, res) {
+		res.send("Hello World");
+	});
+	```
+* Then make sure your application server is listening.
+
+	```
+	app.listen(3000, function (req, res) {
+		console.log("working!!")
+	});
+	```
+* You should have an `index.js` like the following:
+
+	```
+	var express = require("express");
+	var app = express();
+
+	app.get("/", function (req, res) {
+		res.send("Hello World");
+	});
+
+	app.listen(3000, function (req, res) {
+		console.log("working!!")
+	});
+	```
+
+* Create a `GET /` route in your 
+
+
+**Test** your url shortener using `https://google.com`.
 
 ### Pitfalls
 

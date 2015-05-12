@@ -1,5 +1,5 @@
 var express = require("express"),
-  bodyParser = require("bodyParser"),
+  bodyParser = require("body-parser"),
   path = require("path");
 
 var app = express();
@@ -12,7 +12,7 @@ var urls = [];
 
 // send index.html
 app.get("/", function (req, res) {
-  var homePath = path.join(views, "index.html");
+  var homePath = path.join(views, "home.html");
   res.sendFile(homePath);
 });
 
@@ -30,7 +30,7 @@ app.post("/urls", function (req, res) {
 app.get("/urls/:index", function (req, res) {
   var index = req.params.index;
   var url = urls[index];
-  res.redirectTo(url);
+  res.redirect(url);
 });
 
 
