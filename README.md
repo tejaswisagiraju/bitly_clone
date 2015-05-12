@@ -239,6 +239,39 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 	});
 	```
 
+### More Hints: Saving URLS
+
+* In order to save a url we need to add an array to store our `urls`
+
+	```javascript
+	var express = require("express");
+	var path = require("path"); 
+	var bodyParser = require("body-parser"); 
+
+	var app = express();
+	app.use(bodyParser.urlencoded({extended: true});
+
+	// a variable that represents "./views"
+	var views = path.join(process.cwd(), "views"); 
+
+	var urls = [];// <--- Add this variable for urls
+	```
+
+* Now update your `app.post` to use push `newUrl` into the `urls` array.
+
+	```javascript
+
+	app.post("/urls", function (req, res) {
+		var newUrl = req.body.newUrl;
+		urls.push(newUrl);
+		res.send("URLS ARE: " + urls.join(", "));
+	});
+
+	```
+
+
+### MOOOORE HINTS: REDIRECTING
+
 
 ### Pitfalls
 
