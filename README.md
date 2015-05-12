@@ -1,6 +1,6 @@
 # Intro Express: Bit.ly Clone
 
-**Contents**
+**Contents**     
 [Workflow & Submission](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#workflow--submission)   
 [Helpful Concepts](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#helpful-concepts)   
 [Bitly Clone Spec](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#bitly-clone-spec)   
