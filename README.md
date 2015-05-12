@@ -1,5 +1,16 @@
-# Intro Express
-## Bitly Clone
+# Intro Express: Bit.ly Clone
+
+**Contents**
+[Workflow & Submission](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#workflow--submission)   
+[Helpful Concepts](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#helpful-concepts)   
+[Bitly Clone Spec](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#bitly-clone-spec)   
+[Deliverables](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#deliverables)   
+[Getting Started](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#getting-started)   
+[HINTS](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#hints)   
+[Hint 1: Responding with a file](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#hint-1-responding-with-a-file)   
+[Hint 2: Adding a form](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#hint-2-adding-a-form)   
+[Hint 3: Saving URLS](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#hint-3-saving-urls)   
+[Bonus](https://github.com/litterbox-sf-wdi-18/bitly_clone/blob/master/README.md#bonus)   
 
 ### Workflow & Submission
 
