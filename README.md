@@ -53,12 +53,15 @@ Wondering how to get started? This section will guide you through creating and s
 	touch index.js
 	mkdir views
 	touch views/home.html
+	echo "node_modules" >> .gitignore
 	npm init 
 	npm install --save express
 	```
   * The `index.js` file holds all of our main application logic. **It is the main file you'll work in for the rest of the lab.**
   * We'll use the `views/home.html` file later by sending it as one of our responses.
   * The `npm init` command asks some questions about your project, then automatically makes a `package.json` for you.
+  * We're appending "node_modules" to our .gitignore file so that we don't upload that directory to our Github repository. 
+
 2. Make sure to setup your application to require **Express**.
 	
 	```javascript
