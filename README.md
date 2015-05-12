@@ -47,7 +47,7 @@ You'll need the following routes:
 
 * Make the required files and directories
 
-	```
+	```bash
 	touch index.js
 	mkdir views
 	touch views/home.html
@@ -58,27 +58,27 @@ You'll need the following routes:
 * The `index.js` file holds all of our main application logic
 * Make sure to setup your application to require **Express**.
 	
-	```
+	```javascript
 	var express = require("express");
 	var app = express();
 	```
 * Then add your first simple route.
 
-	```
+	```javascript
 	app.get("/", function (req, res) {
 		res.send("Hello World");
 	});
 	```
 * Then make sure your application server is listening.
 
-	```
+	```javascript
 	app.listen(3000, function (req, res) {
 		console.log("working!!")
 	});
 	```
 * You should have an `index.js` like the following:
 
-	```
+	```javascript
 	var express = require("express");
 	var app = express();
 
@@ -135,13 +135,13 @@ You'll need the following routes:
 
 Just concatenating strings that represent file paths is dangerous. Just imagine adding up.
 
-```
+```javascript
 "/views/" + "/home.html"
 ```
 
 Because it would be tough for you to go in and properly remove all the extra `/` marks or add them when missing we will a built in Node utility to do this for us **path**. Add the following to the top of your application.
 
-```
+```javascript
 var express = require("express");
 var path = require("path"); // <-- add this
 
@@ -151,7 +151,7 @@ var app = express();
 
 Then define your a variable that is your `./views/` directory path.
 
-```
+```javascript
 var express = require("express");
 var path = require("path"); 
 
@@ -163,7 +163,7 @@ var views = path.join(process.cwd(), "views");
 
 Now in your `app.get` you should refactor your to use this.
 
-```
+```javascript
 app.get("/", function (req, res) {
 	var homePath = path.join(views, "home.html");
 	res.sendFile(homePath);
@@ -211,12 +211,12 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 
 * First we need to make sure our application can handle the form data being submitted.
 
-	```
+	```bash
 	npm install --save body-parser
 	```
 * Then we need to add `body-parser` to our require statements.
 
-	```
+	```javascript
 	var express = require("express");
 	var path = require("path"); 
 	var bodyParser = require("body-parser"); // <-- add this
