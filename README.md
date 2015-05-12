@@ -46,7 +46,7 @@ You'll need the following routes:
 
 ## More Directions
 
-### Getting Started
+### Example Project Setup
 
 * Make the required files and directories
 
@@ -57,29 +57,29 @@ You'll need the following routes:
 	npm init 
 	npm install --save express
 	```
-* We'll need the `views/home.html` file to send as our response later.
-* The `index.js` file holds all of our main application logic
+  * We'll use the `views/home.html` file later by sending it as one of our responses.
+  * The `index.js` file holds all of our main application logic and is the main file you'll work in.
 * Make sure to setup your application to require **Express**.
 	
 	```javascript
 	var express = require("express");
 	var app = express();
 	```
-* Then add your first simple route.
+* Add your first simple route.
 
 	```javascript
 	app.get("/", function (req, res) {
 		res.send("Hello World");
 	});
 	```
-* Then make sure your application server is listening.
+* Make sure your application server is listening.
 
 	```javascript
 	app.listen(3000, function (req, res) {
 		console.log("working!!")
 	});
 	```
-* You should have an `index.js` like the following:
+* By this point, you should have an `index.js` like the following:
 
 	```javascript
 	var express = require("express");
@@ -93,8 +93,6 @@ You'll need the following routes:
 		console.log("working!!")
 	});
 	```
-
-* Create a `GET /` route in your 
 
 ### HINT DIRECTIONS
 
