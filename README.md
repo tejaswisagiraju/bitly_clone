@@ -25,9 +25,7 @@
 ![user story](user_story.gif)
 *User story: Program requirements written in terms of what a user should be able to do with the final product.*
 
-## Notes
-
-### Deliverables
+## Deliverables
 
 You'll need the following routes:
 
@@ -105,7 +103,7 @@ Feeling stuck?  Each hint below should help you get one step closer to completin
 
 * Each time you change your server, stop it (CTRL-C) and restart it (`node index.js`).
 * Make sure you check that each submited url starts with either `https://` or `http://`.
-* To read form data, try using the Node package `body-parser`. **After** you require `body-parser` in your code, add the following line:
+* To read form data, try using the Node package `body-parser` [docs here](https://github.com/expressjs/body-parser). **After** you require `body-parser` in your code, set it up with the following line:
 	```
 	app.use(bodyParser.urlencoded({extended: true}) // <-- add this
 	```
