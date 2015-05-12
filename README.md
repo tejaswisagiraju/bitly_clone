@@ -99,14 +99,18 @@ Wondering how to get started? This section will guide you through creating and s
 
 ### HINTS
 
-Feeling stuck?  Each hint below should help you get one step closer to completing the lab. 
-
-![Spoiler Warning!](http://www.thefutonalliance.com/wp-content/uploads/2013/11/spoiler-warning.jpg)
+Feeling stuck?  Each hint below should help you get one step closer to completing the lab. We'll start with a few simple ones:
 
 #### Hint 0: General hints   
 
 * Each time you change your server, stop it (CTRL-C) and restart it (`node index.js`).
 * Make sure you check that each submited url starts with either `https://` or `http://`.
+* To read form data, try using the Node package `body-parser`. **After** you require `body-parser` in your code, add the following line:
+	```
+	app.use(bodyParser.urlencoded({extended: true}) // <-- add this
+	```
+
+![Spoiler Warning!](http://www.thefutonalliance.com/wp-content/uploads/2013/11/spoiler-warning.jpg)
 
 
 ------
