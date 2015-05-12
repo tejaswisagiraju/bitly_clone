@@ -186,6 +186,22 @@ We want to add a form for our `urls`.
 
 ```
 
+Note here that in this form we have both an **action** and a **method**.
+
+| form attribute | role |
+| :--- | :--- |
+| `action="/urls"` | tells it where to send the request on the server |
+| `method="POST"` | tells the server what type of request is being made |
+
+
+Remember there are some conventions for certain types of requests.
+
+| Request Type | Role |
+| :--- | :--- |
+| `GET /puppies` or `GET /puppies/sparky`| the `GET` request just requests the information related to requested resource. Here we are requesting all information about `puppies` or the puppy with name `sparky`. |
+| `POST /puppies` | A `POST` request is usually reserved for **creating something new** on a server. | 
+| `PUT /puppies/sparky?name=sparkles` | A `PUT` request is usually reserved for some kind of **update** on the server. Here we might be trying to update the **puppy** with name **sparky** to have the name **sparkles** |
+| `DELETE /puppies/sparky` | The **DELETE** type of request should remove something from the server. Here we are removing the puppy with name of **sparky**. |
 
 ### Pitfalls
 
