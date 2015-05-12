@@ -53,7 +53,7 @@ Wondering how to get started? This section will guide you through creating and s
 	touch index.js
 	mkdir views
 	touch views/home.html
-	echo "node_modules" >> .gitignore
+	echo 'node_modules' >> .gitignore
 	npm init 
 	npm install --save express
 	```
