@@ -282,7 +282,9 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 
 ### Pitfalls
 
+* Each time you change your server stop and restart it.
 * Make sure you check that each submited url starts with either `https://` or `http://`.
+
 
 ### Bonus
 
