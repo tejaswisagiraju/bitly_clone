@@ -93,8 +93,99 @@ You'll need the following routes:
 
 * Create a `GET /` route in your 
 
+### HINT DIRECTIONS
 
-**Test** your url shortener using `https://google.com`.
+* We want to send our `./views/home.html` file as our response when someone goes to **localhost:3000/**.
+
+	```
+		./views/home.html
+   /|\
+		|
+	the dot means 
+	current 
+	working 
+	directory
+	or cwd
+	```
+* We want to add some text to the `home.html` file
+
+	```html
+	<!DOCTYPE html>
+<html>
+<head>
+  <title>Bitly Clone</title>
+</head>
+<body>
+	Hello World
+</body>
+</html>
+	```
+* Let's send that file back as a response. Modify your `app.get("/", ...)` route.
+
+	```javascript
+	app.get("/", function (req, res) {
+		// note we are using `res.sendFile`
+		res.sendFile(process.cwd() + "/views/home.html");
+	});
+	```
+* Test your app is running at `localhost:3000`. Do you see hello world?
+
+
+#### Quick Refactor
+
+Just concatenating strings that represent file paths is dangerous. Just imagine adding up.
+
+```
+"/views/" + "/home.html"
+```
+
+Because it would be tough for you to go in and properly remove all the extra `/` marks or add them when missing we will a built in Node utility to do this for us **path**. Add the following to the top of your application.
+
+```
+var express = require("express");
+var path = require("path"); // <-- add this
+
+var app = express();
+
+```
+
+Then define your a variable that is your `./views/` directory path.
+
+```
+var express = require("express");
+var path = require("path"); 
+
+var app = express();
+// a variable that represents "./views"
+var views = path.join(process.cwd(), "views"); 
+
+```
+
+Now in your `app.get` you should refactor your to use this.
+
+```
+app.get("/", function (req, res) {
+	var homePath = path.join(views, "home.html");
+	res.sendFile(homePath);
+});
+
+```
+
+-----
+
+### Adding A Form
+
+We want to add a form for our `urls`. 
+
+```html
+
+<form action="/urls" method="POST">
+	<input type="text" name="url" placeholder="New Url">
+	<button>Shorten URL</button>
+</form>
+
+```
+
 
 ### Pitfalls
 
