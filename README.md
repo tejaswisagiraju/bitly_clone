@@ -273,6 +273,8 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 ### MOOOORE HINTS: REDIRECTING
 
 
+
+
 ### Pitfalls
 
 * Make sure you check that each submited url starts with either `https://` or `http://`.
