@@ -1,7 +1,7 @@
 # Intro Express
 ## Bitly Clone
 
-### Getting Started
+### Workflow & Submission
 
 * Fork this repo onto your GitHub account.
 * Clone the repo from your GitHub account onto your computer.
@@ -11,13 +11,13 @@
 * Submit a link to the `bitly_clone` reop on your GitHub account.
 
 
-## Helpful Concepts
+### Helpful Concepts
 
  ![the request response cycle](req_res.gif)
 
 ### Bitly Clone Spec
 
-* A **user** can go to `localhost:3000` or the root route and see a `form` to submit a `url`.
+* A **user** can go to `localhost:3000` or the root route and see a `form` to submit a url.
 * A **user** can submit a link to server using the form.
 * A **user** should receive back a response with the url they can use to be redirected to the their submited url, i.e. something of the form  `localhost:3000/urls/:id`.
 * A **user** should be able to to use the url they receive back from your server as a redirect url.
@@ -44,11 +44,10 @@ You'll need the following routes:
 	```
 * When your user goes to the `/urls/:id` route, you should look up the `:id` param in the `urls` array to find the associated url and then redirect to it.
 
-## More Directions
+## Getting Started
+Wondering how to get started? This section will guide you through creating and setting up a simple example project. You can use the example project as a starting point for your app.
 
-### Example Project Setup
-
-* Make the required files and directories
+1. Make the required files and directories.
 
 	```bash
 	touch index.js
@@ -57,29 +56,30 @@ You'll need the following routes:
 	npm init 
 	npm install --save express
 	```
+  * The `index.js` file holds all of our main application logic. **It is the main file you'll work in for the rest of the lab.**
   * We'll use the `views/home.html` file later by sending it as one of our responses.
-  * The `index.js` file holds all of our main application logic and is the main file you'll work in.
-* Make sure to setup your application to require **Express**.
+  * The `npm init` command asks some questions about your project, then automatically makes a `package.json` for you.
+2. Make sure to setup your application to require **Express**.
 	
 	```javascript
 	var express = require("express");
 	var app = express();
 	```
-* Add your first simple route.
+3. Add your first simple route.
 
 	```javascript
 	app.get("/", function (req, res) {
 		res.send("Hello World");
 	});
 	```
-* Make sure your application server is listening.
+4. Make sure your application server is listening.
 
 	```javascript
 	app.listen(3000, function (req, res) {
 		console.log("working!!")
 	});
 	```
-* By this point, you should have an `index.js` like the following:
+5. By this point, you should have an `index.js` like the following:
 
 	```javascript
 	var express = require("express");
@@ -94,34 +94,47 @@ You'll need the following routes:
 	});
 	```
 
-### HINT DIRECTIONS
+### HINTS
 
-* We want to send our `./views/home.html` file as our response when someone goes to **localhost:3000/**.
+Feeling stuck?  Each hint below should help you get one step closer to completing the lab. 
+
+![Spoiler Warning!](http://www.thefutonalliance.com/wp-content/uploads/2013/11/spoiler-warning.jpg)
+
+#### Hint 0: General hints   
+
+* Each time you change your server, stop it and restart it.
+* Make sure you check that each submited url starts with either `https://` or `http://`.
+
+
+------
+#### Hint 1: Responding with a file
+
+**We want to send our `./views/home.html` file as our response when someone goes to **localhost:3000/**.**
 
 	```
-		./views/home.html
-   /|\
-		|
+		 ./views/home.html
+		/|\
+		 |
 	the dot means 
 	current 
 	working 
 	directory
 	or cwd
 	```
-* We want to add some text to the `home.html` file
+  * We need to add some text to the `home.html` file
 
 	```html
 	<!DOCTYPE html>
-<html>
-<head>
-  <title>Bitly Clone</title>
-</head>
-<body>
-	Hello World
-</body>
-</html>
+	<html>
+	<head>
+	  <title>Bitly Clone</title>
+	</head>
+	<body>
+	  Hello World
+	</body>
+	</html>
 	```
-* Let's send that file back as a response. Modify your `app.get("/", ...)` route.
+  * Let's send that file back as a response. Modify your `app.get("/", ...)` route.
 
 	```javascript
 	app.get("/", function (req, res) {
@@ -129,19 +142,20 @@ You'll need the following routes:
 		res.sendFile(process.cwd() + "/views/home.html");
 	});
 	```
-* Test your app is running at `localhost:3000`. Do you see hello world?
+  * Test your app is running at `localhost:3000`. Do you see hello world?
 
-
-#### Quick Refactor
-
-Just concatenating strings that represent file paths is dangerous. Just imagine adding up.
-
-```javascript
-"/views/" + "/home.html"
-```
-
-Because it would be tough for you to go in and properly remove all the extra `/` marks or add them when missing we will a built in Node utility to do this for us **path**. Add the following to the top of your application.
-
+	
+**Quick Refactor**
+	
+Just concatenating strings that represent file paths is dangerous. Just imagine adding up:
+	
+	```javascript
+	"/views/" + "/home.html"
+	=> "/views//home.html"
+	```
+	
+Because it would be tough for you to go in and properly remove all the extra `/` marks (or add them when missing), we will use a built in Node utility to do this for us: **path**. Add the following to the top of your application.
+	
 ```javascript
 var express = require("express");
 var path = require("path"); // <-- add this
@@ -150,7 +164,7 @@ var app = express();
 
 ```
 
-Then define your a variable that is your `./views/` directory path.
+Then define a variable that is your `./views/` directory path.
 
 ```javascript
 var express = require("express");
@@ -161,8 +175,8 @@ var app = express();
 var views = path.join(process.cwd(), "views"); 
 
 ```
-
-Now in your `app.get` you should refactor your to use this.
+	
+Now refactor your root `app.get` route to use the `views` variable.
 
 ```javascript
 app.get("/", function (req, res) {
@@ -174,9 +188,9 @@ app.get("/", function (req, res) {
 
 -----
 
-### Adding A Form
+#### Hint 2: Adding a form
 
-We want to add a form for our `urls`. 
+**We want to add a form to take in users' `urls`. **
 
 ```html
 
@@ -187,9 +201,9 @@ We want to add a form for our `urls`.
 
 ```
 
-### A Note About Forms
+**A Note About Forms**
 
-Note here that in this form we have both an **action** and a **method**.
+Note that in the form above we have both an **action** and a **method**.
 
 | form attribute | role |
 | :--- | :--- |
@@ -204,11 +218,12 @@ Remember there are some conventions for certain types of requests.
 | `GET /puppies` or `GET /puppies/sparky`| the `GET` request just requests the information related to requested resource. Here we are requesting all information about `puppies` or the puppy with name `sparky`. |
 | `POST /puppies` | A `POST` request is usually reserved for **creating something new** on a server. | 
 | `PUT /puppies/sparky?name=sparkles` | A `PUT` request is usually reserved for some kind of **update** on the server. Here we might be trying to update the **puppy** with name **sparky** to have the name **sparkles** |
-| `DELETE /puppies/sparky` | The **DELETE** type of request should remove something from the server. Here we are removing the puppy with name of **sparky**. |
+| `DELETE /puppies/sparky` | The **DELETE** type of request should remove something from the server. Here we are removing the puppy with name of **sparky**. ![Puppy falls into pool](http://i.giphy.com/Vp9rYcsH1cIVO.gif)|
 
-----
 
-If we submit the above we will be making a `POST /urls`, and we will also be sending form data in our request. 
+
+
+If we submit the form from above, we will be making a `POST /urls` request, and we will also be sending form data in our request. 
 
 * First we need to make sure our application can handle the form data being submitted.
 
@@ -231,7 +246,7 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 
 	```
 
-* Now we need to setup our `app.post` route
+* Now we need to set up our `app.post` route.
 
 	```javascript
 	app.post("/urls", function (req, res) {
@@ -240,9 +255,12 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 	});
 	```
 
-### More Hints: Saving URLS
+-----
+#### Hint 3: Saving URLS
 
-* In order to save a url we need to add an array to store our `urls`
+** We want to keep track of our redirect urls. **
+
+* In order to save a url, we need to add an array to store our `urls`.
 
 	```javascript
 	var express = require("express");
@@ -258,7 +276,7 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 	var urls = [];// <--- Add this variable for urls
 	```
 
-* Now update your `app.post` to use push `newUrl` into the `urls` array.
+* Now update your `app.post` to push the `newUrl` from the form into the `urls` array.
 
 	```javascript
 
@@ -271,7 +289,7 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 
 	```
 
-* We need to add a route where `/urls/:index` takes us to our requested `url`.
+* We need to add a route so that `/urls/:index` takes us to our requested url.
 
 	```javascript
 	app.get("/urls/:index", function (req, res) {
@@ -281,18 +299,14 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 	```
 
 
-### Pitfalls
-
-* Each time you change your server stop and restart it.
-* Make sure you check that each submited url starts with either `https://` or `http://`.
 
 
 ### Bonus
 
-Because using an array index doesn't obscure how we are looking up the submitted links our site is vulnerable. Nothing is stopping someone from going through every index to see what links have been submitted.
+Because using an array index doesn't obscure how we are looking up the submitted links, our site is vulnerable. Nothing is stopping someone from going through every index to see what links have been submitted.
 
 ```
-localhost:3000/urls/0
+   localhost:3000/urls/0
    localhost:3000/urls/1
    localhost:3000/urls/2
    ...
@@ -309,8 +323,8 @@ localhost:3000/urls/0
 		// => "XwPp9xazJ0ku5CZnlmgAx2Dld8SHkAeT"
 		
 		```
-	* Get rid of your array and use an Object to store a random string associated to random string generated each time a url is submitted.
-	* Your server should now respond with the following:
+* Get rid of your array and use an Object to store a random string associated to random string generated each time a url is submitted.
+* Your server should now respond with the following:
 	
 		```
 		Visit your url at localhost:3000/urls/XwPp9xazJ0ku5CZnlmgAx2Dld8SHkAeT
