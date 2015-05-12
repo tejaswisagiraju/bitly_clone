@@ -103,7 +103,7 @@ Feeling stuck?  Each hint below should help you get one step closer to completin
 
 * Each time you change your server, stop it (CTRL-C) and restart it (`node index.js`).
 * Make sure you check that each submited url starts with either `https://` or `http://`.
-* To read form data, try using the Node package `body-parser` [docs here](https://github.com/expressjs/body-parser). **After** you require `body-parser` in your code, set it up with the following line:
+* To read form data, try using the Node package `body-parser` [(docs here)](https://github.com/expressjs/body-parser). **After** you require `body-parser` in your code, set it up with the following line:
 	```
 	app.use(bodyParser.urlencoded({extended: true}) // <-- add this
 	```
@@ -328,7 +328,7 @@ Because using an array index doesn't obscure how we are looking up the submitted
 		// => "XwPp9xazJ0ku5CZnlmgAx2Dld8SHkAeT"
 		
 		```
-* Get rid of your array and use an Object to store a random string associated to random string generated each time a url is submitted.
+* Get rid of your array and use an Object to store a new random string key for each submitted url value.
 * Your server should now respond with the following:
 	
 		```
