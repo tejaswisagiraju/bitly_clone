@@ -49,11 +49,11 @@ Wondering how to get started? This section will guide you through creating and s
 
 1. Make the required files and directories.
 
-	```bash
+	```
 	touch index.js
 	mkdir views
 	touch views/home.html
-	echo 'node_modules' >> .gitignore
+	echo "node_modules" >> .gitignore
 	npm init 
 	npm install --save express
 	```
