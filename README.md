@@ -264,15 +264,20 @@ If we submit the above we will be making a `POST /urls`, and we will also be sen
 	app.post("/urls", function (req, res) {
 		var newUrl = req.body.newUrl;
 		urls.push(newUrl);
-		res.send("URLS ARE: " + urls.join(", "));
+		var index = urls.length - 1;
+		res.send("View your url at localhost:3000/urls/" + index));
 	});
 
 	```
 
+* We need to add a route where `/urls/:index` takes us to our requested `url`.
 
-### MOOOORE HINTS: REDIRECTING
-
-
+	```javascript
+	app.get("/urls/:index", function (req, res) {
+		var url = urls[req.params.index];
+		res.redirect(url);
+	});
+	```
 
 
 ### Pitfalls
